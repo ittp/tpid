@@ -3,3 +3,770 @@
 <script>
 console.log('tpid init')
 </script>
+
+<style>
+  *,
+html,
+body,
+button,
+input,
+textarea,
+select {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header .container {
+    max-width: 1024px;
+}
+
+header .container nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    background: #0009;
+    padding: 15px 25px;
+}
+
+select {
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    display: flex;
+    padding: 35px 20px 35px;
+    background: rgba(255, 255, 255, 0);
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+    color: #fbfbfb;
+    background: transparent;
+}
+
+
+}
+a {
+    color: #39464E;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+input,
+textarea,
+select {
+    ` font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+select {
+    cursor: pointer;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset,
+img {
+    border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+ol,
+ul {
+    list-style: none;
+}
+caption,
+th {
+    text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+abbr,
+acronym {
+    border: 0;
+}
+::-webkit-input-placeholder {
+    color: #8d8f91;
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    
+    color: #8d8f91;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    
+    color: #8d8f91;
+}
+:-ms-input-placeholder {
+    color: #8d8f91;
+}
+.icon {
+    stroke: inherit;
+}
+button:focus,
+a:focus,
+a:active,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"]>input[type="button"]::-moz-focus-inner {
+    outline: none !important;
+}
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+.checkboxCont {
+    cursor: pointer;
+}
+.checkboxCont .checkbox {
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 14px;
+    width: 24px;
+    height: 14px;
+    margin-right: 5px;
+    top: -2px;
+    -webkit-transition: all .15s;
+    transition: all .15s;
+}
+.checkboxCont .checkbox:after {
+    content: "";
+    border-radius: 12px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    display: block;
+    -webkit-transition: left .15s;
+    transition: left .15s;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 0 1px 0 rgba(0, 0, 0, 0.21);
+}
+.checkboxCont input[type="checkbox"] {
+    display: none;
+}
+.checkboxCont input[type="checkbox"]:checked+.checkbox {
+    background: #2E71FF;
+}
+.checkboxCont input[type="checkbox"]:checked+.checkbox:after {
+    left: 11px;
+}
+.checkboxCont input[type="checkbox"]:disabled+.checkbox {
+    background: rgba(0, 0, 0, 0.1);
+}
+.checkboxCont input[type="checkbox"]:disabled+.checkbox:after {
+    opacity: 0.5;
+}
+.checkboxCont small {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: inherit;
+}
+.proBadgeSelf {
+    display: none;
+}
+.proBadge .proBadgeSelf {
+    display: inline-block;
+    background: #F3CA63;
+    color: #1a1d21;
+    padding: 0 3px;
+    height: 13px;
+    border-radius: 2px;
+    line-height: 13px;
+    font-size: 9px;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    bottom: -2px;
+    left: 3px;
+    text-transform: uppercase;
+}
+.proBadge .proBadgeSelf:hover {
+    text-decoration: none;
+    background: #f8e2aa;
+}
+#sidebar .proBadgeSelf {
+    color: #1a1d21;
+}
+.groupsList {
+    overflow: auto;
+    max-height: 150px;
+    margin-top: 10px;
+}
+.groupsList .privateGroup {
+    height: 10px;
+    display: inline-block;
+    padding: 2px;
+    border-radius: 2px;
+    background: inherit;
+    vertical-align: bottom;
+}
+.groupsList .privateGroup g {
+    stroke: #8d8f91;
+}
+.groupsList li {
+    margin-bottom: 5px;
+}
+.groupsList li input {
+    display: inline-block;
+}
+.groupsList li span {
+    color: inherit;
+    max-width: 140px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: bottom;
+    margin-left: 5px;
+}
+.groupsList label {
+    font-size: 13px;
+    cursor: pointer;
+}
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+body {
+    background: #1a1d21;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #fbfbfb;
+}
+* {
+    box-sizing: border-box;
+}
+.formHeading {
+    padding-bottom: 25px;
+}
+.formHeading h2 {
+    text-align: left;
+    padding: 60px 0 0;
+    font-size: 24px;
+    line-height: 1.27em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #fbfbfb;
+}
+.formHeading p {
+    font-size: 15px;
+}
+#session {
+    position: relative;
+    margin: 0 auto;
+    width: 400px;
+    padding: 60px 0 0;
+}
+#session h1 {
+    text-align: center;
+}
+#session svg {
+    stroke: #2a2d32;
+}
+a {
+    color: #2E71FF;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+form fieldset {
+    border: solid 1px rgba(207, 208, 209, 0.1);
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+    width: 100%;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    background: #1F2227;
+}
+form .buttonCont {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0 auto;
+    outline: none;
+    position: relative;
+}
+form .buttonCont input,
+form .buttonCont button {
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    border: 0;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    padding: 0 28px;
+    background: #2E71FF;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    -webkit-transition: all 150ms;
+    transition: all 150ms;
+    text-decoration: none;
+}
+form .buttonCont input:hover,
+form .buttonCont button:hover {
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+    background: #0050fa;
+}
+form .buttonCont input:active,
+form .buttonCont button:active {
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+    background: #0038ae;
+}
+form .buttonCont input:disabled,
+form .buttonCont button:disabled {
+    background: rgba(255, 255, 255, 0.15);
+    pointer-events: none;
+}
+form .buttonCont input {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+form .buttonCont button {
+    height: 60px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+form .buttonCont button span {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 2px;
+}
+form .fieldCont {
+    position: relative;
+    border-bottom: solid 1px rgba(207, 208, 209, 0.1);
+}
+form .fieldCont:last-child {
+    border-bottom: 0;
+}
+.fieldCont-select {}
+form label {
+    position: absolute;
+    top: 26px;
+    left: 20px;
+    font-size: 15px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    pointer-events: none;
+    color: #8d8f91;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="url"] {
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    display: block;
+    padding: 35px 20px 15px;
+    background: rgba(255, 255, 255, 0);
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+    color: #fbfbfb;
+}
+form input:focus+label,
+form input.filled+label,
+form input:valid+label {
+    top: 15px;
+    font-size: 13px;
+    color: #616367;
+}
+form .formActions {
+    margin-top: 50px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.tosInfo {
+    color: #8d8f91;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 10px;
+}
+.tosInfo a {
+    color: inherit;
+    text-decoration: underline;
+}
+.otherLinks {
+    margin-top: 30px;
+    text-align: center;
+}
+.otherLinks a {
+    margin: 0 5px;
+    color: #cfd0d1;
+}
+.errorsList {
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #fbfbfb;
+}
+.errorsList li {
+    border-left: solid 3px #FF4F68;
+    margin-bottom: 5px;
+    padding: 2px 0 2px 10px;
+}
+.proBody {
+    display: grid;
+    grid-template-columns: 400px 370px;
+    grid-template-areas: "main side";
+    grid-gap: 45px;
+    margin-top: 50px;
+}
+.proBody .formActions {
+    margin-top: 0;
+}
+.proBody #payment-switcher {
+    border: solid 1px rgba(207, 208, 209, 0.1);
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+    width: 100%;
+    background: #1F2227;
+    position: relative;
+    height: 82px;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: flex;
+    margin-top: 50px;
+}
+.proBody #payment-switcher:after {
+    content: "";
+    display: block;
+    height: 72px;
+    width: calc(45% - 8px);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: #2E71FF;
+    border-radius: 4px;
+    pointer-events: none;
+    -webkit-transition: left 0.2s;
+    transition: left 0.2s;
+    z-index: 1;
+}
+.proBody #payment-switcher.switch_once:after {
+    width: calc(55% - 8px);
+    left: calc(45% + 4px);
+}
+.proBody #payment-switcher li {
+    position: relative;
+    z-index: 10;
+    width: 45%;
+    height: 82px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+.proBody #payment-switcher li:last-child {
+    width: 55%;
+}
+.proBody #payment-switcher li strong,
+.proBody #payment-switcher li em,
+.proBody #payment-switcher li label {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+.proBody #payment-switcher li label {
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+.proBody #payment-switcher li strong {
+    width: 100%;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.proBody #payment-switcher li em {
+    display: block;
+    font-size: 13px;
+}
+.proBody #payment-switcher input {
+    display: none;
+}
+.proBody #payment-switcher label {
+    padding: 0;
+    color: #8d8f91;
+    position: relative;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+}
+.proBody #payment-switcher input[type=radio]:checked+label {
+    color: #fbfbfb;
+}
+.proBody main {
+    grid-area: main;
+}
+.proBody main h2 {
+    font-size: 22px;
+    line-height: 1.37em;
+    font-weight: 600;
+    color: #fbfbfb;
+    width: 95%;
+    text-align: center;
+}
+.proBody main .supportersList {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 30px 0 0;
+}
+.proBody main .supportersList img {
+    margin-right: -10px;
+    display: block;
+    overflow: hidden;
+    border-radius: 100%;
+    height: 42px;
+    width: 42px;
+    border: solid 2px #1a1d21;
+    background: #1F2227;
+}
+.proBody main p {
+    color: #616367;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 10px;
+}
+.proBody aside {
+    grid-area: side;
+    padding: 0 20px;
+    border-radius: 5px;
+    border: solid 1px rgba(255, 255, 255, 0.1);
+    background: #1F2227;
+    color: #fbfbfb;
+}
+.proBody aside .sideTitle {
+    margin: 20px 0 30px;
+    color: #616367;
+}
+.proBody aside svg {
+    width: 22px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.proBody aside ul li {
+    position: relative;
+    padding-left: 40px;
+    margin: 30px 0;
+    font-size: 14px;
+    line-height: 1.4em;
+    color: #cfd0d1;
+}
+.proBody aside ul li strong {
+    font-weight: 700;
+}
+.proBody aside ul li em {
+    font-size: 11px;
+    color: #8d8f91;
+    padding: 2px 3px;
+    border-radius: 3px;
+    border: solid 1px #2c2f34;
+    margin-left: 5px;
+}
+.proBody aside ul li:nth-child(1) strong {
+    color: #BF5B74;
+}
+.proBody aside ul li:nth-child(1) g {
+    stroke: #BF5B74;
+}
+.proBody aside ul li:nth-child(2) strong {
+    color: #88D2FC;
+}
+.proBody aside ul li:nth-child(2) g {
+    stroke: #88D2FC;
+}
+.proBody aside ul li:nth-child(3) strong {
+    color: #70D18C;
+}
+.proBody aside ul li:nth-child(3) g {
+    stroke: #70D18C;
+}
+.proBody aside ul li:nth-child(4) strong {
+    color: #FFCF96;
+}
+.proBody aside ul li:nth-child(4) path {
+    stroke: #FFCF96;
+}
+.proBody aside ul li:nth-child(5) strong {
+    color: #B8B9EE;
+}
+.proBody aside ul li:nth-child(5) path {
+    stroke: #B8B9EE;
+}
+.proBody .buttonCont {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0 auto;
+    outline: none;
+    position: relative;
+    margin-top: 70px;
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+.proBody .buttonCont .ctaButton {
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    border: 0;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    padding: 0 28px;
+    background: #2E71FF;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    -webkit-transition: all 150ms;
+    transition: all 150ms;
+    text-decoration: none;
+    width: 100%;
+    height: 70px;
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.proBody .buttonCont .ctaButton:hover {
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+    background: #0050fa;
+}
+.proBody .buttonCont .ctaButton:active {
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+    background: #0038ae;
+}
+.proBody .buttonCont .ctaButton:disabled {
+    background: rgba(255, 255, 255, 0.15);
+    pointer-events: none;
+}
+.proBody .buttonCont .ctaButton span {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 2px;
+}
+.StripeElement {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+}
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+#payment-form fieldset {
+    position: relative;
+}
+#payment-form fieldset #card-errors {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    color: #fa755a;
+}
+</style>
