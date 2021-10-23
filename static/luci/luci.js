@@ -1,5 +1,5 @@
-
-(function(window,document,undefined){'use strict';var env={};if(typeof Object.assign!=='function'){Object.defineProperty(Object,'assign',{value:function assign(target,varArgs){if(target==null)
+// (function(window,document,undefined){
+'use strict';var env={};if(typeof Object.assign!=='function'){Object.defineProperty(Object,'assign',{value:function assign(target,varArgs){if(target==null)
 throw new TypeError('Cannot convert undefined or null to object');var to=Object(target);for(var index=1;index<arguments.length;index++)
 if(arguments[index]!=null)
 for(var nextKey in arguments[index])
@@ -225,4 +225,6 @@ try{json=res.json()}catch(e){}
 cb(res.xhr,json,res.duration);});},hasViewPermission:function(){if(!this.isObject(env.nodespec)||!env.nodespec.satisfied)
 return null;return!env.nodespec.readonly;},stop:function(entry){return Poll.remove(entry)},halt:function(){return Poll.stop()},run:function(){return Poll.start()},dom:DOM,view:View,Poll:Poll,Request:Request,Class:Class});var XHR=Class.extend({__name__:'LuCI.xhr',__init__:function(){if(window.console&&console.debug)
 console.debug('Direct use XHR() is deprecated, please use L.Request instead');},_response:function(cb,res,json,duration){if(this.active)
-cb(res,json,duration);delete this.active;},get:function(url,data,callback,timeout){this.active=true;LuCI.prototype.get(url,data,this._response.bind(this,callback),timeout);},post:function(url,data,callback,timeout){this.active=true;LuCI.prototype.post(url,data,this._response.bind(this,callback),timeout);},cancel:function(){delete this.active},busy:function(){return(this.active===true)},abort:function(){},send_form:function(){LuCI.prototype.error('InternalError','Not implemented')},});XHR.get=function(){return LuCI.prototype.get.apply(LuCI.prototype,arguments)};XHR.post=function(){return LuCI.prototype.post.apply(LuCI.prototype,arguments)};XHR.poll=function(){return LuCI.prototype.poll.apply(LuCI.prototype,arguments)};XHR.stop=Request.poll.remove.bind(Request.poll);XHR.halt=Request.poll.stop.bind(Request.poll);XHR.run=Request.poll.start.bind(Request.poll);XHR.running=Request.poll.active.bind(Request.poll);window.XHR=XHR;window.LuCI=LuCI;})(window,document);
+cb(res,json,duration);delete this.active;},get:function(url,data,callback,timeout){this.active=true;LuCI.prototype.get(url,data,this._response.bind(this,callback),timeout);},post:function(url,data,callback,timeout){this.active=true;LuCI.prototype.post(url,data,this._response.bind(this,callback),timeout);},cancel:function(){delete this.active},busy:function(){return(this.active===true)},abort:function(){},send_form:function(){LuCI.prototype.error('InternalError','Not implemented')},});XHR.get=function(){return LuCI.prototype.get.apply(LuCI.prototype,arguments)};XHR.post=function(){return LuCI.prototype.post.apply(LuCI.prototype,arguments)};XHR.poll=function(){return LuCI.prototype.poll.apply(LuCI.prototype,arguments)};XHR.stop=Request.poll.remove.bind(Request.poll);XHR.halt=Request.poll.stop.bind(Request.poll);XHR.run=Request.poll.start.bind(Request.poll);XHR.running=Request.poll.active.bind(Request.poll);window.XHR=XHR;window.LuCI=LuCI;
+
+//})(window,document);
